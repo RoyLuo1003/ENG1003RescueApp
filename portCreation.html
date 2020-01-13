@@ -1,0 +1,126 @@
+<html>
+
+	<head>
+		<!-- code to make web app display on mobile device correctly -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!--- link mapbox -->
+		<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.3.1/mapbox-gl.js'></script>
+		<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.3.1/mapbox-gl.css' rel='stylesheet'/>
+		<!-- link mdl libraries -->
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+		<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+		<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+		<!-- add our css stylesheet -->
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+
+	<body id="portBody">
+    <div class="mdl-grid" id="createPort">
+      <!-- Port Creation -->
+      <div class="mdl-cell mdl-cell--7-col mdl-cell--4-col-phone">
+        <div class="mdl-grid">
+					<a href="index.html">
+						<button onclick="" id="Prev"class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--accent">Back</button>
+					</a>
+          <div class="mdl-cell mdl-cell--12-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+            <div class="mdl-card mdl-shadow--4dp fill40" id="newPortInputs">
+              <div class="mdl-card__title">
+                <h2 class="mdl-card__title-text"> Add New Port </h2>
+              </div>
+              <div id="portInformationInputs" class="mdl-card__supporting-text">
+								<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+									<input class="mdl-textfield__input" type="text" id="inNamePort">
+									<label class="mdl-textfield__label" for="inNamePort">Name</label>
+								</div>
+								<a>,</a>
+								<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+									<input class="mdl-textfield__input" type="text" id="inCountryPort">
+									<label class="mdl-textfield__label" for="inCountryPort">Country</label>
+								</div>
+								</div>
+								<div class="mdl-card__actions mdl-card--border">
+								<button id="Get"class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--accent" onclick = "showFoundPorts()">Get Coordinates</button></br></br></br>
+								<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+									<input class="mdl-textfield__input" type="text" id="inLatPort">
+									<label class="mdl-textfield__label" for="inLatPort">Latitiude</label>
+								</div>
+								<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+									<input class="mdl-textfield__input" type="text" id="inLngPort">
+									<label class="mdl-textfield__label" for="inLngPort">Longitude</label>
+								</div>
+							  </div>
+								<div class="mdl-card__actions mdl-card--border">
+								<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+									<select class="mdl-textfield__input" id="inTypePort" type="text" name="inTypePort">
+										<option value=""></option>
+										<option value="Sea">Sea</option>
+										<option value="River">River</option>
+										<option value="Lake">Lake</option>
+										<option value="Bay">Bay</option>
+									</select>
+									<label class="mdl-textfield__label" for="inTypePort">Type</label>
+								</div>
+								<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+									<select class="mdl-textfield__input" id="inSizePort" type="text" name="inSizePort">
+										<option value=""></option>
+										<option value="Small">Small</option>
+										<option value="Medium">Medium</option>
+										<option value="Large">Large</option>
+										<option value="Unknown">Unknown</option>
+									</select>
+									<label class="mdl-textfield__label" for="inTypePort">Size</label>
+								</div>
+								<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+									<select class="mdl-textfield__input" id="inLocationPrecisionPort" type="text" name="inLocationPrecisionPort">
+										<option value=""></option>
+										<option value="Poor">Poor</option>
+										<option value="Good">Good</option>
+										<option value="Unknown">Unknown</option>
+									</select>
+									<label class="mdl-textfield__label" for="inLocationPrecisionPort">Location Precision</label>
+								</div>
+							</br></br></br></br></br></br></br></br></br></br></br></br>
+							</div>
+              <div class="mdl-card__actions mdl-card--border" id="addBackground">
+                <button onclick="addPort()" id="addButton" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--accent">Add Port</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Confirmation -->
+      <div id='portInformationSummary' class="mdl-cell mdl-cell--6-col mdl-cell--4-col-phone">
+        <div class="mdl-grid">
+          <div class="mdl-cell mdl-cell--12-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+            <div class="mdl-card mdl-shadow--4dp fill40" id="portAddConfirmation">
+							<div id='newPortMapArea' class='page-block'></div><br/>
+              <div class="mdl-card__title">
+                <h1 class="mdl-card__title-text"> Port Information </h1>
+              </div>
+              <div class="mdl-card__supporting-text">
+                <span> Name: <label id="namePort"></label></span><br/>
+                <span> Country: <label id="countryPort"></label></span><br/>
+                <span> Type: <label id="typePort"></label></span><br/>
+                <span> Size: <label id="sizePort"></label></span><br/>
+								<span> Location Precision: <label id="locationPrecisionPort"></label></span><br/>
+								<span> Latitude: <label id="latPort"></label></span><br/>
+								<span> Longitude: <label id="lngPort"></label></span><br/>
+              </div>
+              <div class="mdl-card__actions mdl-card--border">
+                <button onclick="confirmPort()" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Confirm Add</button>
+                <button onclick="cancelPort()" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Cancel</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+		<!-- link our javascript file -->
+		<script src="scripts/classes.js"></script>
+		<script src="scripts/portCreation.js"></script>
+	</body>
+</html>

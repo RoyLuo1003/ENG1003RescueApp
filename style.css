@@ -1,0 +1,286 @@
+/*GLOBAL*/
+#create{
+  background: #465b64;
+  color: #01FE23;
+  float: center;
+  width:33%;
+}
+#Prev,#Next,#Back,#details{
+  width:33%;
+  background: #465b64;
+}
+#Prev{
+ float: left;
+}
+#Next{
+float: right;
+}
+#header{
+  background: transparent;
+  min-height: fit-content !important;
+  z-index: 1;
+}
+#ShipUsSafe{
+  background: #627a84;
+  height:100%;
+}
+
+#tab{
+  background: #465b64;
+  z-index: 1;
+}
+
+#leftTab{
+  text-align: center;
+}
+
+#table,#intialtable{
+  background-color:transparent !important;
+  height: 640px;
+}
+
+
+
+/* Map Tab */
+#map{
+  height:735px;
+  width: 1366px;
+}
+#shipInfoCard,#portInfoCard{
+  background: :#4a5768;
+  color: white;
+}
+#indexMapArea{
+  height:750px!important;
+
+  width: 1366px!important;
+
+  float: center;
+
+  position:absolute; top: 0; left: 0;;
+
+  z-index: 0;
+}
+#intialCard{
+  background-color: transparent;
+  position: absolute; right:0;
+  height:auto;
+  width:387px;
+}
+#intialtable{
+  float: right;
+  height: 100%!important;
+  z-index: 2;
+  padding: 0!important;
+}
+#routeTabMapArea{
+  height:370px;
+
+  width: 100%;
+}
+
+
+
+/* Ship Tab */
+
+#shipInfoCard{
+  width:100%;
+  height:290px;
+}
+
+#shipAddConfirmation{
+width: 600px;
+}
+
+#shipInformationInputs{
+height: 700px;
+}
+
+#close{
+  background-color: #FE3B69;
+  color: white;
+}
+
+/* Port Tab */
+
+#portInfoCard{
+  width:99%;
+  height: 250px;
+}
+
+#portMapArea{
+height:375px!important;
+
+width:100%!important;
+
+float:right;
+}
+
+
+
+/* Route Tab */
+#routeInfoCard{
+  width:100%;
+}
+
+ /* text */
+h2,a,h3{
+   color: white!important;
+ }
+
+
+
+td,th{
+ width:100%
+}
+
+th{
+ color: white!important;
+
+ text-align: right!important;
+
+ padding : 5px;
+
+ font-size: 15px!important;
+
+ background-color:#465b64;
+ }
+
+td{
+ font-size:15px;
+
+ font-weight:300;
+
+ text-align: center;
+
+ background-color: #627a84;
+ }
+
+p{
+   text-align: center;
+   font-size: 50px
+ }
+
+
+
+/* Create tabs */
+.mdl-js-textfield,.mdl-textfield--floating-label,.mdl-textfield,.mdl-textfield__label,.mdl-textfield__input{
+  color: #FEBB01!important;
+}
+#newShipInputs,#newPortInputs{
+  height: 700px;
+  background-color: #627a84;
+  width: 100%;
+}
+
+#createShip,#createPort,#portBody,#routeBody{
+  background-color:#465b64;
+  height: 756px!important;
+  width:100%;
+}
+#shipAddConfirmation{
+  width: 38%;
+  position: absolute; right: 40; top: 70;
+}
+#portAddConfirmation{
+  width: 38%;
+  position: absolute; right: 40; top: 70;
+}
+#newPortMapArea{
+  width: 100%;
+  height: 375px;
+}
+#Get{
+  float: left;
+  background: #465b64;
+  width: 100%;
+}
+/* css for routeCreation.html */
+
+#setRouteInformation{
+  overflow-y: scroll;
+  height:770px;
+
+}
+
+#routeCreationMapArea{
+
+height:500px;
+
+width: 100%;
+
+float:left;
+
+}
+
+#routeConfirm{
+  width: 100%;
+  height:100%;
+}
+
+#Back{
+  position: absolute; top:0; left:0;
+}
+#routeConfButton{
+  background-color:pink!important;
+}
+#pageTitle{
+
+padding-left: 450px;
+
+}
+
+
+#waypointMdlHeader{
+
+padding-left: 16px;
+
+}
+
+
+#waypointsInstructions{
+
+padding-left: 40px;
+
+padding-top: 20px;
+
+}
+
+
+#waypointMapArea{
+
+height: 500px;
+
+width: 94%;
+
+margin-right: 40px;
+
+border: 1px solid grey;
+
+float:left;
+
+margin-left: 40px;
+
+}
+
+
+#waypointButtons{
+
+padding-left: 40px;
+
+}
+
+#setWaypoints{
+
+  width: 400px;
+  height: 500px;
+
+}
+#addButton{
+  width:100%;
+  background-color: transparent;
+  color: #01FE23;
+}
+#addBackground{
+  background-color: #465b64;
+}
